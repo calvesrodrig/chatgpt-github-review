@@ -1,3 +1,3 @@
-import { robot } from './bot'
+import { robot } from './bot.js'
 
 robot()

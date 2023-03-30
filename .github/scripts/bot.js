@@ -1,4 +1,4 @@
-import { Chat } from "./chat"
+import { Chat } from "./chat.js"
 import { Octokit } from "@octokit/rest"
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
