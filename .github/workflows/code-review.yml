@@ -24,6 +24,7 @@ jobs:
         run: npm install
 
       - name: Use chatgpt review script
+        shell: bash
         working-directory: .github/scripts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

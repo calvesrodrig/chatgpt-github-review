@@ -7,7 +7,16 @@ const [owner, repo] = process.env.REPOSITORY.split("/");
 const pull_number = process.env.PULL_NUMBER;
 const MAX_PATCH_COUNT = 4000;
 
-export const robot = async () => {
+export const run = async () => {
+  try {
+    await robot()
+  } catch (error) { 
+    console.error(error)
+  }
+  
+};
+
+const robot = async () => {
   const octokit = new Octokit({ auth: GITHUB_TOKEN });
   const chat = await loadChat();
 
@@ -80,7 +89,7 @@ export const robot = async () => {
   console.info("suceess reviewed", pull_request.html_url);
 
   return "success";
-};
+}
 
 const loadChat = async () => {
   if (OPENAI_API_KEY) {

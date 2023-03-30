@@ -1,3 +1,3 @@
-import { robot } from './bot.js'
+import { run } from './bot.js'
 
-robot()
+run()
