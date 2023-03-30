@@ -1,5 +1,5 @@
-const { Chat } = require("./chat");
-const { Octokit } = require("@octokit/rest");
+import { Chat } from "./chat"
+import { Octokit } from "@octokit/rest"
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;

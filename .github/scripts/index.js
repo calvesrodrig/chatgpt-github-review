@@ -1,3 +1,3 @@
-const { robot } = require('./bot')
+import { robot } from './bot'
 
 robot()

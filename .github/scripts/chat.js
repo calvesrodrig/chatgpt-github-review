@@ -1,4 +1,4 @@
-const { ChatGPTAPI } = require('chatgpt');
+import { ChatGPTAPI } from 'chatgpt'
 const temperature = process.env.TEMPERATURE;
 const top_p = process.env.TOP_P;
 
