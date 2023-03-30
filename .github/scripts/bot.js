@@ -8,10 +8,19 @@ const pull_number = process.env.PULL_NUMBER;
 const MAX_PATCH_COUNT = 4000;
 
 export const run = async () => {
+  if (!OPENAI_API_KEY) {
+    console.error('Você não passou a chave da API do chatgpt')
+    process.exit(1)
+  }
+  if (!GITHUB_TOKEN) {
+    console.error('Você não passou o token do github')
+    process.exit(1)
+  }
   try {
     await robot()
   } catch (error) { 
     console.error(error)
+    process.exit(1)
   }
   
 };
