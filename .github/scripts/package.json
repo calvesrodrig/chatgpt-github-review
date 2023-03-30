@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "@octokit/rest": "^19.0.7",
-    "chatgpt": "^5"
+    "chatgpt": "^5",
+    "node-fetch": "^3.3.0"
   }
 }
