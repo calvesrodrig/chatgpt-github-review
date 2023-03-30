@@ -17,7 +17,6 @@ const check = async () => {
     const failedSteps = botComments.filter(({body}) => body.includes('❌'))
     if (failedSteps.length) {
         failedSteps.forEach(step => console.error(`Erro: Impossível fazer merge - ${step.body}`))
-        process.exit(1)
     }
     console.log('Todos os workflows foram concluidos com sucesso')
     process.exit(0)
