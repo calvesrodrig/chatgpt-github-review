@@ -7,7 +7,7 @@ const [owner, repo] = process.env.REPOSITORY.split("/");
 const pull_number = process.env.PULL_NUMBER;
 const MAX_PATCH_COUNT = 4000;
 
-const robot = async () => {
+export const robot = async () => {
   const octokit = new Octokit({ auth: GITHUB_TOKEN });
   const chat = await loadChat();
 
@@ -89,5 +89,3 @@ const loadChat = async () => {
   console.error("You did not provided the OPENAI_API_KEY");
   return;
 };
-
-module.exports = { robot };

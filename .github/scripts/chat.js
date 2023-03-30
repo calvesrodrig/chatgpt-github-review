@@ -2,7 +2,7 @@ import { ChatGPTAPI } from 'chatgpt'
 const temperature = process.env.TEMPERATURE;
 const top_p = process.env.TOP_P;
 
-class Chat {
+export class Chat {
   constructor(apikey) {
     this.chatAPI = new ChatGPTAPI({
       apiKey: apikey,
@@ -34,5 +34,3 @@ class Chat {
     return res.text;
   };
 }
-
-module.exports = { Chat };
