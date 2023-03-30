@@ -1,7 +1,6 @@
 import { ChatGPTAPI } from 'chatgpt'
 const temperature = process.env.TEMPERATURE;
 const top_p = process.env.TOP_P;
-import fetch from 'node-fetch';
 
 export class Chat {
   constructor(apikey) {

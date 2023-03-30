@@ -16,7 +16,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-         node-version: 14.17.4
+         node-version: 18.15.0
 
       - name: Install script dependencies
         shell: bash
