@@ -26,6 +26,7 @@ export const run = async () => {
 };
 
 const robot = async () => {
+  console.log(owner, repo, pull_number)
   const octokit = new Octokit({ auth: GITHUB_TOKEN });
   const chat = await loadChat();
 
@@ -36,6 +37,8 @@ const robot = async () => {
   const pull_request = (
     await octokit.pulls.get({ repo, owner, pull_number })
   ).data;
+
+  console.log(pull_request)
 
   const data = await octokit.repos.compareCommits({
     owner: repo.owner,
