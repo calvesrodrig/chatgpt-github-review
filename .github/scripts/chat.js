@@ -15,7 +15,7 @@ export class Chat {
   }
 
   generatePrompt(patch) {
-    return `Me responda em português. Levando em consideração que seguimos os principios de programação: "SOLID" e "Don't Repeat Yourself", e que também prezamos por um código simples, bem enxuto e previsível, preferindo sempre o uso de const ao invés de let, de interfaces com propriedades readonly, de variáveis tipadas ao invés de usar any, de criação de funções e métodos ao invés de código repetido, faça a revisão e aponte melhorias, bugs e o que pode ser feito para aumentar a legibilidade no seguinte código:
+    return `Me responda em português. Levando em consideração que seguimos os principios de programação: "SOLID" e "Don't Repeat Yourself", e que também prezamos por um código simples, bem enxuto e previsível, preferindo sempre o uso de const ao invés de let, de interfaces com propriedades readonly, de variáveis tipadas ao invés de usar any, de criação de funções e métodos ao invés de código repetido, faça a revisão e aponte melhorias, bugs e o que pode ser feito para aumentar a legibilidade no código. Sempre que puder, escreva um código melhor alternativo para referência e refatoração. Lembre-se que geralmente o que estou passando são só pedaços de códigos de uma feature inteira, o código está a seguir:
     ${patch}
     `;
   };

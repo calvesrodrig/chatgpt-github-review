@@ -26,7 +26,6 @@ export const run = async () => {
 };
 
 const robot = async () => {
-  console.log(owner, repo, pull_number)
   const octokit = new Octokit({ auth: GITHUB_TOKEN });
   const chat = await loadChat();
 
@@ -35,14 +34,14 @@ const robot = async () => {
   }
 
   const pull_request = (
-    await octokit.pulls.get({ repo, owner, pull_number })
+    await octokit.rest.pulls.get({ repo, owner, pull_number })
   ).data;
 
-  console.log(pull_request)
+  console.log(pull_request.head.sha)
 
-  const data = await octokit.repos.compareCommits({
-    owner: repo.owner,
-    repo: repo.repo,
+  const data = await octokit.rest.repos.compareCommits({
+    owner,
+    repo,
     base: pull_request.base.sha,
     head: pull_request.head.sha,
   });
@@ -52,9 +51,9 @@ const robot = async () => {
   if (commits.length >= 2) {
     const {
       data: { files },
-    } = await octokit.repos.compareCommits({
-      owner: repo.owner,
-      repo: repo.repo,
+    } = await octokit.rest.repos.compareCommits({
+      owner,
+      repo,
       base: commits[commits.length - 2].sha,
       head: commits[commits.length - 1].sha,
     });
