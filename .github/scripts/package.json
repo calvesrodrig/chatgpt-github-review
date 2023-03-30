@@ -1,0 +1,16 @@
+{
+  "name": "scripts",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@octokit/rest": "^19.0.7",
+    "chatgpt": "^5"
+  }
+}
